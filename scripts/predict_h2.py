@@ -11,7 +11,7 @@ import pandas as pd
 
 warnings.filterwarnings("ignore", category=UserWarning, module="sklearn")
 
-PROJECT_ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 PIPELINE_PATH = PROJECT_ROOT / "data" / "models" / "h2_yield_pipeline.joblib"
 
 VALID_FM_RATIOS = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0]

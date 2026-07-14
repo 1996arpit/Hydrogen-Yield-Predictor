@@ -72,10 +72,7 @@ def main():
     )
 
     st.title("Hydrogen Yield Predictor")
-    st.caption(
-        "Predict H₂ yield from dark fermentation process parameters "
-        f"(output unit: **{H2_YIELD_UNIT}**)."
-    )
+    st.caption(f"Dark fermentation H₂ yield · output: {H2_YIELD_UNIT}")
 
     pipeline = load_pipeline()
     model = pipeline["model"]
@@ -88,10 +85,7 @@ def main():
             st.metric("Group CV R²", f"{pipeline['group_cv_mean_r2']:.3f}")
         if "original_holdout_r2" in pipeline:
             st.metric("Original holdout R²", f"{pipeline['original_holdout_r2']:.3f}")
-        st.markdown(
-            "Enter **10 primary inputs**. TS, FS, and SCOD/TCOD ratio "
-            "are calculated automatically."
-        )
+        st.markdown("Enter 10 inputs. TS, FS, and SCOD/TCOD are derived for you.")
 
     st.subheader("Primary inputs")
 

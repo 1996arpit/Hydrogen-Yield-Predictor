@@ -14,11 +14,12 @@ from sklearn.model_selection import (
 )
 
 RANDOM_STATE = 42
-DATA_PATH = Path(__file__).resolve().parent / "h2_data.csv"
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DATA_PATH = PROJECT_ROOT / "data" / "processed" / "h2_data.csv"
 REFERENCE_PATH = (
-    Path(__file__).resolve().parent / "reference_experimental_data.csv"
+    PROJECT_ROOT / "data" / "processed" / "reference_experimental_data.csv"
 )
-MODELS_DIR = Path(__file__).resolve().parent / "models"
+MODELS_DIR = PROJECT_ROOT / "data" / "models"
 PIPELINE_PATH = MODELS_DIR / "h2_yield_pipeline.joblib"
 
 TARGET = "h2_yield"
@@ -171,8 +172,8 @@ def main():
     joblib.dump(pipeline, PIPELINE_PATH)
 
     print("Pipeline saved:", PIPELINE_PATH)
-    print("Group CV R²  :", round(pipeline["group_cv_mean_r2"], 4))
-    print("Original R²    :", round(pipeline["original_holdout_r2"], 4))
+    print("Group CV R┬▓  :", round(pipeline["group_cv_mean_r2"], 4))
+    print("Original R┬▓    :", round(pipeline["original_holdout_r2"], 4))
     print("Original MAE   :", round(pipeline["original_holdout_mae"], 4))
 
 
