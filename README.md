@@ -16,6 +16,12 @@ Predict H₂ yield from dark fermentation parameters — leakage-aware ML pipeli
 | F/M-only Extra Trees | 0.83 | 38.8 |
 | Full Extra Trees (deployed) | 0.72 | 47.9 |
 
+Deployed model: **Tuned Extra Trees** (GroupKFold CV R² ≈ 0.67).
+
+## Live demo
+
+**Try the app:** https://hydrogen-yield-predictor-wubzgkxntf4hxc2zqtenqf.streamlit.app/
+
 ## Layout
 
 `notebooks/` · `data/raw|processed|models/` · `scripts/` · `streamlit_app.py`
